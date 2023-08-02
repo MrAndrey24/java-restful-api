@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class GenericResponse {
     LocalDateTime datetime;
+    String message;
     ArrayList<Object> data;
 
     public LocalDateTime getDatetime() {
@@ -23,6 +24,14 @@ public class GenericResponse {
         this.data = data;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public GenericResponse(ArrayList<Object> data) {
         this.datetime = LocalDateTime.now();
         this.data = data;
@@ -32,6 +41,11 @@ public class GenericResponse {
         this.datetime = LocalDateTime.now();
         this.data = new ArrayList<>();
         this.data.add(data);
+    }
+
+    public GenericResponse(String message) {
+        this.datetime = LocalDateTime.now();
+        this.message = message;
     }
 
 }
